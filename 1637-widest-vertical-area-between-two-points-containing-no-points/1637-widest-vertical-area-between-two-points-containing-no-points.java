@@ -9,7 +9,6 @@ class Solution {
             if(arr[i+1]-arr[i] > s)
                 s = arr[i+1]-arr[i];
         }
-        System.gc();
         return s;
     }
 }
