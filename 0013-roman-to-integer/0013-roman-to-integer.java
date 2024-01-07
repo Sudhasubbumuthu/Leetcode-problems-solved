@@ -8,36 +8,17 @@ class Solution {
         mp.put('C',100);
         mp.put('D',500);
         mp.put('M',1000);
-        int l = s.length()-1, s1 = 0;
-        for(int i=0; i<s.length(); i++){
-            if(s.charAt(i) == 'I'&& i != l && s.charAt(i+1) == 'V' ){
-                s1 += 4;
-                i++;
-            }
-            else if(s.charAt(i) == 'I' && i != l && s.charAt(i+1) == 'X'){
-                s1 += 9;
-                i++;
-            }
-            else if(s.charAt(i) == 'X' && i != l && s.charAt(i+1) == 'L'){
-                s1 += 40;
-                i++;
-            }
-            else if(s.charAt(i) == 'X' && i != l && s.charAt(i+1) == 'C' ){
-                s1 += 90;
-                i++;
-            }
-            else if(s.charAt(i) == 'C'  && i != l && s.charAt(i+1) == 'D'){
-                s1 += 400;
-                i++;
-            }
-            else if(s.charAt(i) == 'C' && i != l && s.charAt(i+1) == 'M'){
-                s1 += 900;
-                i++;
+        int l = s.length()-1, r = 0;
+        for(int i=s.length()-1; i>=0; i--){
+            int t = mp.get(s.charAt(i));
+            if(i != 0 && mp.get(s.charAt(i-1)) < t ){
+                r += (t - mp.get(s.charAt(i-1)));
+                i--;
             }
             else{
-                s1 += mp.get(s.charAt(i));
+                r += t;
             }
         }
-        return s1;
+        return r;
     }
 }
