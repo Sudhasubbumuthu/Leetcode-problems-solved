@@ -8,16 +8,15 @@ class Solution {
         mp.put('C',100);
         mp.put('D',500);
         mp.put('M',1000);
-        int l = s.length()-1, r = 0;
+        int r = 0;
         for(int i=s.length()-1; i>=0; i--){
             int t = mp.get(s.charAt(i));
             if(i != 0 && mp.get(s.charAt(i-1)) < t ){
                 r += (t - mp.get(s.charAt(i-1)));
                 i--;
             }
-            else{
+            else
                 r += t;
-            }
         }
         return r;
     }
