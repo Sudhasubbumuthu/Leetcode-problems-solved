@@ -10,9 +10,6 @@ class Solution {
                     c2++;
             }
         }
-        if(c1 == c2)
-            return true; 
-        else 
-            return false;
+        return c1==c2;
     }
 }
