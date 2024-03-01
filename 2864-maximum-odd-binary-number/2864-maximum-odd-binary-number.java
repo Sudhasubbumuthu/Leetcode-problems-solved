@@ -1,24 +1,24 @@
 class Solution {
     public String maximumOddBinaryNumber(String s) {
-        String[] n = s.split("");
-        Arrays.sort(n, Collections.reverseOrder());
-        int c1 = 0;
-        for (int i = 0; i < n.length; i++) {
-            System.out.print(n[i]);
-            if (n[i].equals("1"))
+        int c0 = 0, c1 = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '1')
                 c1++;
+            else
+                c0++;
         }
-        for (int i = 0; i < n.length; i++) {
-            if (n[i].equals("1"))
-                continue;
-            else {
-                String t = n[i - 1];
-                n[i - 1] = n[n.length - 1];
-                n[n.length - 1] = t;
-                break;
-            }
+        StringBuilder sb = new StringBuilder();
+        c1--;
+        while (c1 > 0) {
+            sb.append(1);
+            c1--;
         }
-        String ans = String.join("", n);
-        return ans;
+        while (c0 > 0) {
+            sb.append(0);
+            c0--;
+        }
+        sb.append(1);
+        return sb.toString();
+
     }
 }
