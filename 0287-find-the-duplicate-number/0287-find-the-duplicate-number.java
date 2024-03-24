@@ -7,6 +7,6 @@ class Solution {
            }
            hs.add(nums[i]);
        } 
-       return 1;
+       return -1;
     }
 }
