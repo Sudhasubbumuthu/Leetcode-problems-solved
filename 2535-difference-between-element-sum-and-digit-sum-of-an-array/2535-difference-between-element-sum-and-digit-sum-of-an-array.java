@@ -8,6 +8,7 @@ class Solution {
                 n /= 10;
             }
         }
+        System.gc();
         return elementSum - digitSum;
     }
 }
