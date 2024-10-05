@@ -1,2 +1,3 @@
-# Leetcode-problems-solved
-Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub v3](https://github.com/raphaelheinz/LeetHub-3.0)
+# Leetcode-problems-solved-Java
+LeetCode Problems in Java
+Welcome to my GitHub repository where I've uploaded solutions to various LeetCode problems written in Java.
